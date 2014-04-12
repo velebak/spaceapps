@@ -1,13 +1,13 @@
 Spaceapps::Application.routes.draw do
 
   get "landing/welcome"
-  root "landing#welcome"
-  
+  #root "landing#welcome"
+  root  'observations#index'
   get   "observations"                => 'observations#index'
-  get   "observations/feed/:fid"      => 'obersvations_controller#feed'
-  get   "observations/user/:uid"      => 'obersvations_controller#user'
-  post  "observations/new"            => 'observations_controlle#new'
-  get   "observations/photo"          => 'observations_controller#photo'
+  get   "observations/feed/:fid"      => 'observations#feed'
+  get   "observations/user/:uid"      => 'observations#user'
+  post  "observations/new"            => 'observations#new'
+  get   "observations/photo"          => 'observations#photo'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
