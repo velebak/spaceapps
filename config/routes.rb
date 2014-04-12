@@ -1,6 +1,15 @@
 Spaceapps::Application.routes.draw do
+
   get "landing/welcome"
   root "landing#welcome"
+  
+  get   "observations"                => 'observations#index'
+  get   "observations/feed/:fid"      => 'obersvations_controller#feed'
+  get   "observations/user/:uid"      => 'obersvations_controller#user'
+  post  "observations/new"            => 'observations_controlle#new'
+  get   "observations/photo"          => 'observations_controller#photo'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
