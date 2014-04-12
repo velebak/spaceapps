@@ -3,9 +3,9 @@
 		<% @observations.each do |obsersvation| %>
 		     
 		     <div class="card">
-					<img src="http://" class="card-photo" />
+					<img src="http://<%= obsersvation.photos.first.path %>" class="card-photo" />
 					<div class="card-info">
-						<a href="" class="card-user">wirthdesign</a>
+						<%= link_to "wirthdesign", url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ), :class => 'card-user' %>
 						<a href="" class="fa fa-share-square card-share">&nbsp;</a>
 						<span class="card-time">4 hours ago</span>
 					</div>
