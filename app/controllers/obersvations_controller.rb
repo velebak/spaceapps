@@ -7,7 +7,7 @@ class ObersvationsController < ApplicationController
     @obersvations = Obersvation.all()
   end
   
-  def index
+  def feed
     @obersvations = Obersvation.where(:feed => params[:fid])
   end
 
