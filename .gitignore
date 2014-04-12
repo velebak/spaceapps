@@ -24,6 +24,9 @@
 # Ignore Sass Cache
 .sass-cache
 
+# Ignore Public Assets
+public/assets
+
 # Ignore CodeKit Config
 config.codekit
 idea/
