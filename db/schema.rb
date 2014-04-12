@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412153356) do
+ActiveRecord::Schema.define(version: 20140412204046) do
 
   create_table "feeds", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "type"
+    t.string   "style"
     t.string   "uri"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "locations", force: true do |t|
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140412153356) do
     t.string   "catalog_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "feed_id"
   end
 
   create_table "photos", force: true do |t|
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 20140412153356) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "feed_id"
   end
 
 end
