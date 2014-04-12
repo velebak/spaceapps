@@ -55,4 +55,9 @@ gem 'acts-as-taggable-on'
 # Bourbon
 gem 'bourbon'
 
-gem "font-awesome-rails"
+# Neat
+gem 'neat'
+
+# Bitters
+gem 'bitters'
+gem 'font-awesome-rails'

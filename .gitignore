@@ -15,9 +15,6 @@
 /log/*.log
 /tmp
 
-public/assets/application-a029bd03bea21da7d02c0e9d272edc3a.css public/assets/application-a029bd03bea21da7d02c0e9d272edc3a.css.gz public/assets/application-adbe1707ccd173de13b7f95c41feac39.js public/assets/application-adbe1707ccd173de13b7f95c41feac39.js.gz public/assets/manifest-fd76a1a42bdae472a2b3f1e2811ee7b1.json
-public
-
 # Eclipse Project File
 .project
 
@@ -26,6 +23,9 @@ public
 
 # Ignore Sass Cache
 .sass-cache
+
+# Ignore Public Assets
+public/assets
 
 # Ignore CodeKit Config
 config.codekit

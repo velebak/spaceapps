@@ -33,7 +33,7 @@ $base-color: #05598d;
 	
 	/* Header: Public Navigation */
 	.nav-public {
-		width: percentage(251 / $base-width);
+		width: percentage(530 / $base-width);
 		margin-right: percentage(10 / $base-width);
 		float: right;
 		text-align: right;
@@ -43,6 +43,7 @@ $base-color: #05598d;
 			display: inline-block;
 			margin: 5px 10px 0;
 			padding: 10px 20px;
+			cursor: pointer;
 			color: #fff;
 			font-size: percentage(18 / $base-font);
 			
@@ -68,4 +69,47 @@ $base-color: #05598d;
 .container {
 	max-width: $base-width + px;
 	margin: 0 auto;
+}
+
+
+/* Button
+*************************************************************************/
+
+/* Social Button */
+a.btn-social {
+	height: 50px;
+	display: block;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
+	/* Visited Social Button */
+	&:visited {
+		color: inherit;
+	}
+	/* Google Social Button */
+	&.btn-google {
+		background: #e54636;
+	}
+	/* Twitter Social Button */
+	&.btn-twitter {
+		background: #55acee;
+	}
+	/* Social Button: Font Awesome */
+	.fa {
+		font-size: percentage(32 / $base-font);
+	}
+}
+
+
+/* Modal (Override for Refills Gem)
+*************************************************************************/
+
+/* Modal Window */
+.modal-window {
+	/* Modal Window: Inner */
+	.modal-inner {
+		width: percentage(400 / $base-width);
+		padding: percentage(28 / $base-width);
+		background: #f0f0f0;
+	}
 }
