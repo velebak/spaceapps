@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token
       #user.oauth_expires_at = Time.at(auth.credentials.expires_at?)
+      user.oauth_expires_at = Time.now + 3.days
       user.save!
     end
   end
