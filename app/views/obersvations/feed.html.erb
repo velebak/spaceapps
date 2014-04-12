@@ -1,0 +1,25 @@
+<h1>Listing obersvations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @obersvations.each do |obersvation| %>
+      <tr>
+        <td><%= link_to 'Show', obersvation %></td>
+        <td><%= link_to 'Edit', edit_obersvation_path(obersvation) %></td>
+        <td><%= link_to 'Destroy', obersvation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Obersvation', new_obersvation_path %>
