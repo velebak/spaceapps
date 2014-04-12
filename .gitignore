@@ -29,3 +29,6 @@ public
 
 # Ignore CodeKit Config
 config.codekit
+idea/
+.idea/
+.idea/
