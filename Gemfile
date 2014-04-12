@@ -45,9 +45,12 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'therubyracer'
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
 gem 'acts-as-taggable-on'
 
+# Bourbon
+gem 'bourbon'

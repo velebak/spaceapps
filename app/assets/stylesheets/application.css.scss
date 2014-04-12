@@ -1,0 +1,69 @@
+/* application.scss */
+
+/* Base Font Size */
+$base-font: 16;
+/* Base Width */
+$base-width: 1140;
+/* Base Blue */
+$base-color: #05598d;
+
+@import "_normalize";
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "font-awesome/font-awesome.scss";
+@import "_base";
+@import "_layout";
+
+/* Index */
+
+/* Card */
+.card {
+	width: percentage(344 / $base-width);
+	margin: 0 percentage(14 / $base-width) 28px;
+	background: #fff;
+	float: left;
+	
+	/* Card: Card Info: Photo */
+	.card-photo {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	
+	/* Card: Card Info */
+	.card-info {
+		height: 45px;
+		padding: 2px 10px;
+		display: block;
+		line-height: 1em;
+		
+		/* Card: Card Info: User */
+		.card-user {
+			width: 50%;
+			display: block;
+			margin-top: 2px;
+			font-weight: bold;
+			float: left;
+		}
+		
+		/* Card: Card Info: Time */
+		.card-time {
+			width: 50%;
+			display: block;
+			margin-top: 2px;
+			color: #999;
+			float: left;
+			clear: left;
+		}
+		
+		/* Card: Card Info: Share */
+		.card-share {
+			display: block;
+			margin: 7px 0 0;
+			color: #ccc;
+			float: right;
+			font-size: percentage(24 / $base-font);
+			text-align: right;
+		}
+	}	
+}

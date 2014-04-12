@@ -1,0 +1,71 @@
+/* _layout.scss */
+
+/* Base Font Size */
+$base-font: 16;
+/* Base Width */
+$base-width: 1140;
+/* Base Blue */
+$base-color: #05598d;
+
+/* Header
+*************************************************************************/
+.header {
+	height: 60px;
+	display: block;
+	border-bottom: 5px solid #033a5c;
+	margin-bottom: 20px;
+	overflow: hidden;
+	color: #fff;
+	background: $base-color;
+
+	/* Header: Anchor */
+	a {
+		color: #fff;
+	}
+	
+	/* Header: Logo */
+	.logo {
+		margin: 8px 0 0 percentage(10 / $base-width);
+		float: left;
+		font-family: 'Economica', sans-serif;
+		font-size: percentage(32 / $base-font);
+	}
+	
+	/* Header: Public Navigation */
+	.nav-public {
+		width: percentage(251 / $base-width);
+		margin-right: percentage(10 / $base-width);
+		float: right;
+		text-align: right;
+
+		/* Header: Public Navigation: Anchor */
+		.link {
+			display: inline-block;
+			margin: 5px 10px 0;
+			padding: 10px 20px;
+			color: #fff;
+			font-size: percentage(18 / $base-font);
+			
+			/* Header: Public Navigation: Outline Anchor */
+			&.link-o {
+				border: 1px solid #fff;
+				border-radius: 5px;
+
+				/* Header: Public Navigation: Hover Outline Anchor */
+				&:hover {
+					color: $base-color;
+					background: #fff;
+				}
+			}
+		}
+	}
+	
+}
+
+
+/* Container
+*************************************************************************/
+.container {
+	max-width: $base-width + px;
+	margin: 0 auto;
+}
