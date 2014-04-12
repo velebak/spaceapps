@@ -10,6 +10,7 @@
 #  catalog_number  :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
+#  feed_id         :integer
 #
 
 class Observation < ActiveRecord::Base

@@ -10,9 +10,13 @@
 #  oauth_expires_at :datetime
 #  created_at       :datetime
 #  updated_at       :datetime
+#  feed_id          :integer
 #
 
 class User < ActiveRecord::Base
+
+  has_one :feed
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
