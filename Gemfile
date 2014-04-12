@@ -45,3 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
