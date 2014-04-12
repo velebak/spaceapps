@@ -54,3 +54,9 @@ gem 'acts-as-taggable-on'
 
 # Bourbon
 gem 'bourbon'
+
+# Neat
+gem 'neat'
+
+# Bitters
+gem 'bitters'
