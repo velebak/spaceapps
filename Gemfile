@@ -49,4 +49,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
+gem 'acts-as-taggable-on'
 
