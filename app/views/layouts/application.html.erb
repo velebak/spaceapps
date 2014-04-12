@@ -2,20 +2,43 @@
 <html>
 <head>
   <title>Spaceapps</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- CSS -->
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Economica:400,700", media: "all", "data-turbolinks-track" => true %>
+  <!-- JS -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <!-- META -->
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="user-widget">
-    <% if current_user %>
-        Welcome <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <% else %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
-        <%= link_to "Sign in with Google", "/auth/google", id: "sign_in" %>
-    <% end %>
-</div>
+
+<!-- HEADER -->
+<header class="header">
+	<div class="container">
+
+		<h1 class="logo"><i class="fa fa-rocket">&nbsp;</i>Astrodeo!</h1>
+
+		<div class="nav-public">
+			<div style="display: none;">
+		    <% if current_user %>
+		        Welcome <strong><%= current_user.name %></strong>!
+		        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+		    <% else %>
+				<%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
+				<%= link_to "Sign in with Google", "/auth/google", id: "sign_in" %>
+		    <% end %>
+			</div>
+		<% if current_user %>
+			Logged In
+		<% else %>
+			<a href="" class="link">Log in</a>
+			<a href="" class="link link-o">Sign in</a>
+		<% end %>
+		</div>
+
+	</div>
+</header>
+
 <%= yield %>
 
 </body>
