@@ -19,11 +19,12 @@
 		<h1 class="logo"><i class="fa fa-rocket">&nbsp;</i>Astrodeo!</h1>
 
 		<% if current_user %>
-		<div class="nav-user">
-			Logged In
+		<div class="nav nav-user">
+			<label class="fa fa-cog js-menu-trigger"></label>
+			<label for="modal-3" class="btn-upload js-btn"><i class="fa fa-arrow-circle-o-up"></i> Upload</label>
 		</div>
 		<% else %>
-		<div class="nav-public">
+		<div class="nav nav-public">
 			<label for="modal-1" class="link js-btn">Log in</label>
 			<label for="modal-2" class="link link-o js-btn">Sign Up</label>
 		</div>
@@ -34,6 +35,7 @@
 
 <%= yield %>
 
+<!-- MODAL: LOGIN -->
 <div class="modal">
 	<input class="modal-state" id="modal-1" type="checkbox" />
 	<div class="modal-window">
@@ -50,10 +52,14 @@
 			<a href="/auth/google" class="btn-social btn-google">
 				<span class="fa-wrapper"><li class="fa fa-google-plus"></li></span> <span class="btn-text">Log in with Google</span>
 			</a>
+			
+			<input type="text" name="username" placeholder="Enter username" />
+			
 		</div>
 	</div>
 </div>
 
+<!-- MODAL: SIGN UP -->
 <div class="modal">
 	<input class="modal-state" id="modal-2" type="checkbox" />
 	<div class="modal-window">
@@ -70,25 +76,70 @@
 			<a href="/auth/google" class="btn-social btn-google">
 				<span class="fa-wrapper"><li class="fa fa-google-plus"></li></span> <span class="btn-text">Sign up with Google</span>
 			</a>
+			
+			<input type="text" name="username" placeholder="Enter username" />
+			
 			<p class="text-tos">By clicking "Sign Up" I agree to Astrodeo's Terms of Service.</p>
 		</div>
 	</div>
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('.modal').find('.js-btn').on('click', function() {
-      $(document.body).addClass('modal-open');
-    });
+<!-- MODAL: UPLOAD -->
+<div class="modal">
+	<input class="modal-state" id="modal-3" type="checkbox" />
+	<div class="modal-window">
+		<div class="modal-inner">
+			<label class="modal-close" for="modal-3"></label>
 
-    $('.modal-close').on('click', function() {
-      $(document.body).removeClass('modal-open');
-    })
+			<h1>Upload</h1>
+			
+			<p class="body">Get Started FREE</p>
+			
 
-    $('.modal-bg').on('click', function() {
-      $(document.body).removeClass('modal-open');
-    })
-  })
+		</div>
+	</div>
+</div>
+
+<nav class="js-menu sliding-menu-content">
+  <ul>
+    <li><a href="javascript:void(0)">Edit profile</a></li>
+    <li><a href="javascript:void(0)">Change password</a></li>
+    <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+  </ul>
+</nav>
+
+<div class="js-menu-screen menu-screen"></div>
+
+<script>
+	$(document).ready(function(){
+	
+		// Refills Sliding Menu
+		$('.js-menu-trigger').on('click touchstart', function(e){
+			$('.js-menu').toggleClass('is-visible');
+			$('.js-menu-screen').toggleClass('is-visible');
+			e.preventDefault();
+		});
+		
+		$('.js-menu-screen').on('click touchstart', function(e){
+			$('.js-menu').toggleClass('is-visible');
+			$('.js-menu-screen').toggleClass('is-visible');
+			e.preventDefault();
+		});
+		
+		// Refills Modals
+		$('.modal').find('.js-btn').on('click', function() {
+			$(document.body).addClass('modal-open');
+		});
+		
+		$('.modal-close').on('click', function() {
+			$(document.body).removeClass('modal-open');
+		});
+		
+		$('.modal-bg').on('click', function() {
+			$(document.body).removeClass('modal-open');
+		});
+	
+	});
 </script>
 
 </body>

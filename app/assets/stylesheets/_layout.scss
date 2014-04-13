@@ -32,7 +32,7 @@ $base-color: #05598d;
 	}
 	
 	/* Header: Public Navigation */
-	.nav-public {
+	.nav {
 		width: percentage(530 / $base-width);
 		margin-right: percentage(10 / $base-width);
 		float: right;
@@ -59,6 +59,26 @@ $base-color: #05598d;
 				}
 			}
 		}
+		
+		/* Header: Public Navigation: Upload Button */
+		.btn-upload {
+			margin-top: 8px;
+			@include button(simple, #07c650);
+			font-size: em(18);
+			
+			/* Header: Public Navigation: Upload Button: Font Awesome */
+			.fa {
+				color: #047c32;
+			}
+		}
+		
+		.fa-cog {
+			margin-right: 28px;
+			font-size: em(36);
+			cursor: pointer;
+			position: relative;
+			top: 5px;
+		}
 	}
 	
 }
@@ -83,9 +103,13 @@ a.btn-social {
 	border-radius: 5px;
 	color: #fff;
 	font-weight: bold;
+	/* Active Social Button */
+	&:active {
+		color: #fff;
+	}
 	/* Visited Social Button */
 	&:visited {
-		color: inherit;
+		color: #fff;
 	}
 	/* Google Social Button */
 	&.btn-google {

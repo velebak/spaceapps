@@ -60,4 +60,3 @@ gem 'neat'
 
 # Bitters
 gem 'bitters'
-gem 'font-awesome-rails'
