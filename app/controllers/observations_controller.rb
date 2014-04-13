@@ -76,6 +76,11 @@ class ObservationsController < ApplicationController
     end
   end
 
+  def photo
+    @observation = Observation.find(params[:id])
+    @photo = @observation.photos.first
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_obersvation
