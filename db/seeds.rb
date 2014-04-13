@@ -17,3 +17,9 @@ photos2 = Photo.create([{name: 'p1', path: '/PIA12499_modest.jpg', width: 344, h
 obs3 = Observation.create(feed_id: feed.id)
 photos3 = Photo.create([{name: 'p1', path: '/PIA13890_modest.jpg', width: 344, height: 212, observation_id: obs3.id}])
 
+
+
+user = User.create(name: "Someone")
+feed = Feed.create(user_id: user.id)
+obs = Observation.create(feed_id: feed.id)
+photos = Photo.create([{name: 'p1', path: '/468192main_4_closest_approach_946-710.jpg', width: 344, height: 212, observation_id: obs.id}, {name: 'p2', path: '/PIA00136.jpg', width: 344, height: 212, observation_id: obs.id}])
