@@ -113,6 +113,9 @@ $base-color: #05598d;
 				@include button(simple, #0788d7);
 				font-size: em(18);
 			}
+			&.button-cancel {
+				@include button(simple, #333);
+			}
 		}
 		/* Sidebar: User Module */
 		&.module-user {
