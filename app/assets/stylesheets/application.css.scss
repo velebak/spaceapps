@@ -14,9 +14,10 @@ $base-color: #05598d;
 @import "refills/modal";
 @import "base";
 @import "layout";
-@import "font-awesome";
+@import "font-awesome/font-awesome";
 
-/* Index */
+/* Index
+*************************************************************************/
 
 /* Card */
 .card {
@@ -64,9 +65,12 @@ $base-color: #05598d;
 			margin: 7px 0 0;
 			color: #ccc;
 			float: right;
-			font-size: percentage(24 / $base-font);
+			font-size: em(24);
 			text-align: right;
 		}
 	}	
 }
 
+.text-tos {
+	font-size: em(12);
+}
