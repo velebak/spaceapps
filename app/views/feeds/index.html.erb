@@ -8,9 +8,9 @@
 				<span class="user-username"><%= @feed.user.name %></span>
 				<% if @current_user && @current_user.id != @feed.user_id %>
 					<% if @is_current_user_following %>
-					<button class="active">Following</button>
+						<button class="active">Following</button>
 					<% else %>
-					<a href="/feed/follow/:fid"><button class="active">Following</button></a>
+						<a href="<%= url_for :controller => "feeds", :action => "follow", :fid => @feed.id %>"><button>Follow</button></a>
 					<% end %>
 				<% end %>
 			</div> 

@@ -4,10 +4,12 @@ Spaceapps::Application.routes.draw do
   #root "landing#welcome"
   root  'observations#index'
   get   "observations"                => 'observations#index'
-  get   "feeds/:fid"                  => 'feeds#index'
   get   "observations/user/:uid"      => 'observations#user'
   post  "observations/new"            => 'observations#new'
   get   "observations/photo/:id"      => 'observations#photo'
+  
+  get   "feeds/:fid"                  => 'feeds#index'
+  get   "feeds/follow/:fid"           => 'feeds#follow'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
