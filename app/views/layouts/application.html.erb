@@ -9,6 +9,8 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <!-- META -->
   <%= csrf_meta_tags %>
+  <!-- FAVICON -->
+  <%= favicon_link_tag "favicon.ico?ver=2", :type => "image/x-icon" %>
 </head>
 <body>
 
@@ -48,8 +50,7 @@
 			</a>
 			<a href="/auth/google" class="btn-social btn-google">
 				<span class="fa-wrapper"><li class="fa fa-google-plus"></li></span> <span class="btn-text">Log in with Google</span>
-			</a>			
-			<input type="text" name="username" placeholder="Enter username" />
+			</a>
 			
 		</div>
 	</div>
@@ -70,7 +71,6 @@
 			<a href="/auth/google" class="btn-social btn-google">
 				<span class="fa-wrapper"><li class="fa fa-google-plus"></li></span> <span class="btn-text">Sign up with Google</span>
 			</a>
-			<input type="text" name="username" placeholder="Enter username" />
 			<p class="text-tos">By clicking "Sign Up" I agree to Astrodeo's Terms of Service.</p>
 		</div>
 	</div>
