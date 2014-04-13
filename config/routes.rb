@@ -4,7 +4,7 @@ Spaceapps::Application.routes.draw do
   #root "landing#welcome"
   root  'observations#index'
   get   "observations"                => 'observations#index'
-  get   "observations/feed/:fid"      => 'observations#feed'
+  get   "feeds/:fid"                  => 'feeds#index'
   get   "observations/user/:uid"      => 'observations#user'
   post  "observations/new"            => 'observations#new'
   get   "observations/photo/:id"      => 'observations#photo'
