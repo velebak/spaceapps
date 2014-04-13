@@ -7,7 +7,7 @@ Spaceapps::Application.routes.draw do
   get   "observations/feed/:fid"      => 'observations#feed'
   get   "observations/user/:uid"      => 'observations#user'
   post  "observations/new"            => 'observations#new'
-  get   "observations/photo"          => 'observations#photo'
+  get   "observations/photo/:id"      => 'observations#photo'
   
   
   # The priority is based upon order of creation: first created -> highest priority.

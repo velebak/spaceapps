@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-obs = Observation.create()
-
+user = User.create(name: "Asteroid Dude")
+feed = Feed.create(user_id: user.id)
+obs = Observation.create(feed_id: feed.id)
 photos = Photo.create([{name: 'p1', path: '/path', width: 344, height: 212, observation_id: obs.id}, {name: 'p2', path: '/path', width: 344, height: 212, observation_id: obs.id}])
 

@@ -28,7 +28,7 @@ $base-color: #05598d;
 		margin: 8px 0 0 percentage(10 / $base-width);
 		float: left;
 		font-family: 'Economica', sans-serif;
-		font-size: percentage(32 / $base-font);
+		font-size: em(32);
 	}
 	
 	/* Header: Public Navigation */
@@ -45,7 +45,7 @@ $base-color: #05598d;
 			padding: 10px 20px;
 			cursor: pointer;
 			color: #fff;
-			font-size: percentage(18 / $base-font);
+			font-size: em(18);
 			
 			/* Header: Public Navigation: Outline Anchor */
 			&.link-o {
@@ -79,6 +79,7 @@ $base-color: #05598d;
 a.btn-social {
 	height: 50px;
 	display: block;
+	margin-bottom: 28px;
 	border-radius: 5px;
 	color: #fff;
 	font-weight: bold;
@@ -94,9 +95,25 @@ a.btn-social {
 	&.btn-twitter {
 		background: #55acee;
 	}
-	/* Social Button: Font Awesome */
-	.fa {
-		font-size: percentage(32 / $base-font);
+	/* Social Button: Font Awesome Wrapper */
+	.fa-wrapper {
+		width: 50px;
+		height: 50px;
+		border-right: 1px solid #fff;
+		display: block;
+		float: left;
+		text-align: center;
+		/* Social Button: Font Awesome */
+		.fa {
+			margin-top: 8px;
+			font-size: em(32);
+		}
+	}
+	/* Social Button: Button Text */
+	.btn-text {
+		margin: 10px 0 0 30px;
+		float: left;
+		font-size: em(18);
 	}
 }
 
@@ -104,12 +121,19 @@ a.btn-social {
 /* Modal (Override for Refills Gem)
 *************************************************************************/
 
+/* Modal: Modal Close */
+.modal .modal-close {
+	background-color: transparent;
+}
+
 /* Modal Window */
 .modal-window {
 	/* Modal Window: Inner */
 	.modal-inner {
 		width: percentage(400 / $base-width);
-		padding: percentage(28 / $base-width);
+		max-width: 400px;
+		padding: 28px percentage(28 / $base-width);
 		background: #f0f0f0;
 	}
+	
 }

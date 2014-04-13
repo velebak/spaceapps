@@ -1,15 +1,16 @@
 <div class="">
-	<div class="container">
-		<% @observations.each do |obsersvation| %>
-		     
-		     <div class="card">
-					<img src="http://<%= obsersvation.photos.first.path %>" class="card-photo" />
-					<div class="card-info">
-						<%= link_to "wirthdesign", url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ), :class => 'card-user' %>
-						<a href="" class="fa fa-share-square card-share">&nbsp;</a>
-						<span class="card-time">4 hours ago</span>
-					</div>
-			</div>
-		<% end %>
-	</div>
+    <div class="container">
+    	<%= debug@observations%>
+        <% @observations.each do |obsersvation| %>
+        <div class="card">
+            <a href="<%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>"> <img src="http://<%= obsersvation.photos.first.path %>" class="card-photo" /> </a>
+            <div class="card-info">
+                <!-- TODO Link to asteroid name -->
+                <%= link_to obsersvation.feed.user.name, url_for(:controller => 'observations', :action => 'feed', :fid =>  obsersvation.feed.id ), :class => 'card-user' %>
+                <a href="" class="fa fa-share-square card-share">&nbsp;</a>
+                <span class="card-time"><%= time_ago_in_words(obsersvation.created_at)%> ago</span>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>

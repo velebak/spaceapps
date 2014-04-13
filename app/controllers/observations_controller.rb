@@ -8,7 +8,7 @@ class ObservationsController < ApplicationController
   end
   
   def feed
-    @observations = Observation.where(:feed => params[:fid])
+    @observations = Observation.where(:feed_id => params[:fid])
   end
 
   # GET /observations/1
