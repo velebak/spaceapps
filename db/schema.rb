@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20140413141159) do
     t.integer  "user_id"
   end
 
+  create_table "followers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "locations", force: true do |t|
     t.string   "name"
     t.text     "description"
