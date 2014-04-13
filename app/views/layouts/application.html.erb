@@ -85,14 +85,22 @@
 
 			<h1>Upload</h1>
 			<form method="post" action="/observations/create" enctype="multipart/form-data">
+				<label>Image</label>
 				<p><input type="file" class="file" name="photo" /></p>
-				<input type="text" name="observation[right_ascension]" placeholder="Right Ascension" />
-				<input type="text" name="observation[declination]" placeholder="Declination" />
-				<input type="text" name="observation[magnitude]" placeholder="Magnitude" />
-				<input type="text" name="observation[seen]" placeholder="Seen Date mm/dd/yyyy" />
-				<input type="text" name="location[latitude]" placeholder="Latitude" />
-				<input type="text" name="location[longitude]" placeholder="Longitude" />
-				<input type="text" name="location[altitude]" placeholder="Altitude" />
+				<label>Right Ascension</label>
+				<input type="text" name="observation[right_ascension]" placeholder="Enter right ascension" />
+				<label>Declination</label>
+				<input type="text" name="observation[declination]" placeholder="Enter declination" />
+				<label>Magnitude</label>
+				<input type="text" name="observation[magnitude]" placeholder="Enter magnitude" />
+				<label>Date Seen (mm/dd/yyyy)</label>
+				<input type="text" name="observation[seen]" placeholder="Enter date" />
+				<label>Latitude</label>
+				<input type="text" name="location[latitude]" placeholder="Enter latitude" />
+				<label>Longitude</label>
+				<input type="text" name="location[longitude]" placeholder="Enter longitude" />
+				<label>Altitude</label>
+				<input type="text" name="location[altitude]" placeholder="Enter altitude" />
 <!--	TODO add thse labels	<form>
 				<p><input type="file" class="file" name="" /></p>
 				<label>Date Seen</label>
@@ -145,6 +153,22 @@
 <div class="js-menu-screen menu-screen"></div>
 
 <script type="text/javascript">	
+
+	  $(document).ready(function(){
+	
+	    $('.js-menu-trigger').on('click touchstart', function(e){
+	      $('.js-menu').toggleClass('is-visible');
+	      $('.js-menu-screen').toggleClass('is-visible');
+	      e.preventDefault();
+	    });
+	
+	    $('.js-menu-screen').on('click touchstart', function(e){
+	      $('.js-menu').toggleClass('is-visible');
+	      $('.js-menu-screen').toggleClass('is-visible');
+	      e.preventDefault();
+	    });
+	  });
+
 	$(document).on('keyup', function(e) {
 		if (e.keyCode == 27) {
 			$(document).find('.modal .modal-state:checked').click();
