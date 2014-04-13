@@ -17,7 +17,6 @@
 	<div class="container">
 
 		<h1 class="logo"><a href="/"><i class="fa fa-rocket">&nbsp;</i>Astrodeo!</a></h1>
-
 		<% if current_user %>
 		<div class="nav nav-user">
 			<label class="fa fa-cog js-menu-trigger"></label>
@@ -43,16 +42,13 @@
 			<label class="modal-close" for="modal-1"></label>
 
 			<h1>Log in</h1>
-			
 			<p class="body">Welcome back!</p>
-
 			<a href="/auth/twitter" class="btn-social btn-twitter">
 				<span class="fa-wrapper"><i class="fa fa-twitter"></i></span> <span class="btn-text">Log in with Twitter</span>
 			</a>
 			<a href="/auth/google" class="btn-social btn-google">
 				<span class="fa-wrapper"><li class="fa fa-google-plus"></li></span> <span class="btn-text">Log in with Google</span>
-			</a>
-			
+			</a>			
 			<input type="text" name="username" placeholder="Enter username" />
 			
 		</div>
@@ -66,19 +62,15 @@
 		<div class="modal-inner">
 			<label class="modal-close" for="modal-2"></label>
 
-			<h1>Sign up</h1>
-			
+			<h1>Sign up</h1>			
 			<p class="body">Get Started FREE</p>
-			
 			<a href="/auth/twitter" class="btn-social btn-twitter">
 				<span class="fa-wrapper"><i class="fa fa-twitter"></i></span> <span class="btn-text">Sign up with Twitter</span>
 			</a>
 			<a href="/auth/google" class="btn-social btn-google">
 				<span class="fa-wrapper"><li class="fa fa-google-plus"></li></span> <span class="btn-text">Sign up with Google</span>
 			</a>
-			
 			<input type="text" name="username" placeholder="Enter username" />
-			
 			<p class="text-tos">By clicking "Sign Up" I agree to Astrodeo's Terms of Service.</p>
 		</div>
 	</div>
@@ -107,9 +99,33 @@
 	</div>
 </div>
 
+<!-- MODAL: PROFILE -->
+<div class="modal">
+	<input class="modal-state" id="modal-4" type="checkbox" />
+	<div class="modal-window">
+		<div class="modal-inner">
+			<label class="modal-close" for="modal-4"></label>
+
+			<h1>Profile</h1>
+			<form>
+				<label for="field-fullname">Full name</label>
+				<input type="text" name="" id="field-fullname" placeholder="Enter name" />
+				<label for="field-username">Username</label>
+				<input type="text" name="" id="field-username" placeholder="Enter username" />
+				<label for="field-password">Password</label>
+				<input type="password" id="field-password" name="" />
+				<label for="field-email">Email</label>
+				<input type="text" name="" id="field-email" placeholder="Enter email" />
+				<input class="button" type="submit" value="Finish" />
+			</form>
+
+		</div>
+	</div>
+</div>
+
 <nav class="js-menu sliding-menu-content">
   <ul>
-    <li><a href="javascript:void(0)">Edit profile</a></li>
+    <li><label for="modal-4" class="js-btn"><a>Edit profile</a></label></li>
     <li><a href="javascript:void(0)">Change password</a></li>
     <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
   </ul>
@@ -117,7 +133,7 @@
 
 <div class="js-menu-screen menu-screen"></div>
 
-<script>
+<script type="text/javascript">
 	$(document).ready(function(){
 	
 		// Refills Sliding Menu
@@ -138,7 +154,7 @@
 			$(document.body).addClass('modal-open');
 		});
 		
-		$('.modal-close').on('click', function() {
+		$('.modal-close', '.js-modal-close').on('click', function() {
 			$(document.body).removeClass('modal-open');
 		});
 		
