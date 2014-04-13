@@ -40,6 +40,7 @@ class ObservationsController < ApplicationController
   # POST /observations.json
   def create
     uploaded_photo = params[:photo]
+    logger.debug uploaded_photo
     #TODO better nameing convention
     new_file_name = Time.now.to_s + "." + uploaded_photo.original_filename.split('.').last
     File.open(Rails.root.join('public', 'images', new_file_name ), 'wb') do |file|

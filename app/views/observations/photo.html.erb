@@ -4,8 +4,8 @@
 	
 		<div class="sidebar">
 			<div class="module module-user">
-				<span class="user-name">Kevin Wirth</span>
-				<span class="user-username">wirthdesign</span>
+				<span class="user-name"><%= @observation.feed.user.name %></span>
+				<span class="user-username"><%= @observation.feed.user.username %></span>
 				<button>Follow</button>
 			</div>
 			<div class="module module-details">
@@ -13,19 +13,19 @@
 				<ul class="list-items">
 					<li class="item"><label>Catalog Number</label> <%= @observation.catalog_number %></li>
 					<li class="item"><label>Date Seen</label> <%= @observation.seen %></li>
-					<li class="item"><label>Right Ascension</label> <%= @observation.right_asecnsion %></li>
+					<li class="item"><label>Right Ascension</label> <%= @observation.right_ascension %></li>
 					<li class="item"><label>Declination</label> <%= @observation.declination %></li>
 
                     <li class="item"><label>Magnitude</label> <%= @observation.magnitude %></li>
                     <li class="item"><label>Latitude</label> <%= @observation.location.latitude %></li>
                     <li class="item"><label>Longitude</label> <%= @observation.location.longitude %></li>
                     <li class="item"><label>Address</label> <%= @observation.location.address %></li>
-							</ul>
+				</ul>
 			</div>
 		</div>
 	
 		<section>
-			<img src="<%= @photo.path %>" />
+			<img src="/images/<%= @photo.path %>" />
 		</section>
 	
 	</div>

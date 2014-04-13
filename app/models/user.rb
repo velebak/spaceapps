@@ -15,6 +15,7 @@
 
 class User < ActiveRecord::Base
   before_create :gen_uniq_username
+  #after_save :make_new_feed
 
   has_one :feed
 
@@ -25,6 +26,7 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.now + 1.hour
+      user.feed = Feed.new
       user.save!
     end
   end
@@ -43,7 +45,5 @@ class User < ActiveRecord::Base
     end
     self.username=potential
   end
-
-
 
 end
