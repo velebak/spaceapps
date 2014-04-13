@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 private
   def current_user
     #TODO REMOVE THIS FOR TESTING ONLY
-    session[:user_id] = 2    
+#    session[:user_id] = 2    
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user

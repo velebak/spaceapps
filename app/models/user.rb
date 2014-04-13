@@ -36,12 +36,12 @@ class User < ActiveRecord::Base
   private
   def gen_uniq_username
     potential = slug_username
-    good = false
-    while not User.find_by_username(potential).empty? && tries > 5
-      potential = "#{potential}-#{Random.rand(500000)}"
+    tries =0
+    while not User.find_by_username(potential).nil? || tries > 5
+      potential = "#{slug_username}-#{Random.rand(500000)}"
       tries += 1
     end
-    potential
+    self.username=potential
   end
 
 
