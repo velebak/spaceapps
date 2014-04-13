@@ -14,6 +14,7 @@
 #
 
 class User < ActiveRecord::Base
+  before_create :gen_uniq_username
 
   has_one :feed
 
@@ -23,9 +24,26 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token
-      #user.oauth_expires_at = Time.at(auth.credentials.expires_at?)
-      user.oauth_expires_at = Time.now + 3.days
+      user.oauth_expires_at = Time.now + 1.hour
       user.save!
     end
   end
+
+  def slug_username
+    self.name.downcase.gsub(" ", "-")
+  end
+
+  private
+  def gen_uniq_username
+    potential = slug_username
+    good = false
+    while not User.find_by_username(potential).empty? && tries > 5
+      potential = "#{potential}-#{Random.rand(500000)}"
+      tries += 1
+    end
+    potential
+  end
+
+
+
 end
