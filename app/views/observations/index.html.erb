@@ -3,7 +3,7 @@
     	<%= debug@observations%>
         <% @observations.each do |obsersvation| %>
         <div class="card">
-            <a href="<%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>"> <img src="http://<%= obsersvation.photos.first.path %>" class="card-photo" /> </a>
+            <a href="<%= url_for(:controller => 'observations', :action => 'photo', :id =>  obsersvation.id ) %>"><img src="http://<%= obsersvation.photos.first.path %>" class="card-photo" /></a>
             <div class="card-info">
                 <!-- TODO Link to asteroid name -->
                 <%= link_to obsersvation.feed.user.name, url_for(:controller => 'observations', :action => 'feed', :fid =>  obsersvation.feed.id ), :class => 'card-user' %>

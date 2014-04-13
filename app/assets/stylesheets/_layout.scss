@@ -89,6 +89,19 @@ $base-color: #05598d;
 .container {
 	max-width: $base-width + px;
 	margin: 0 auto;
+	/* Container: Sidebar */
+	.sidebar {
+		width: percentage(344 / $base-width);
+		display: block;
+		float: left;
+	}
+
+	/* Container: Section */
+	section {
+		width: percentage(778 / $base-width);
+		display: block;
+		float: right;
+	}
 }
 
 
