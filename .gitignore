@@ -32,3 +32,5 @@ config.codekit
 idea/
 .idea/
 .idea/
+/.idea/
+*.iml
