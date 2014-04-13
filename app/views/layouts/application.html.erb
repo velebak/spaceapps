@@ -134,36 +134,13 @@
 
 <div class="js-menu-screen menu-screen"></div>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-	
-		// Refills Sliding Menu
-		$('.js-menu-trigger').on('click touchstart', function(e){
-			$('.js-menu').toggleClass('is-visible');
-			$('.js-menu-screen').toggleClass('is-visible');
-			e.preventDefault();
-		});
-		
-		$('.js-menu-screen').on('click touchstart', function(e){
-			$('.js-menu').toggleClass('is-visible');
-			$('.js-menu-screen').toggleClass('is-visible');
-			e.preventDefault();
-		});
-		
-		// Refills Modals
-		$('.modal').find('.js-btn').on('click', function() {
-			$(document.body).addClass('modal-open');
-		});
-		
-		$('.modal-close').on('click', function() {
-			$(document.body).removeClass('modal-open');
-		});
-		
-		$('.modal-bg').on('click', function() {
-			$(document.body).removeClass('modal-open');
-		});
-	
+<script type="text/javascript">	
+	$(document).on('keyup', function(e) {
+		if (e.keyCode == 27) {
+			$(document).find('.modal .modal-state:checked').click();
+		}
 	});
+
 </script>
 
 </body>
