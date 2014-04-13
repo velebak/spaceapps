@@ -5,7 +5,7 @@ Spaceapps::Application.routes.draw do
   root  'observations#index'
   get   "observations"                => 'observations#index'
   get   "observations/user/:uid"      => 'observations#user'
-  post  "observations/new"            => 'observations#new'
+  post  "observations/create"         => 'observations#create'
   get   "observations/photo/:id"      => 'observations#photo'
   
   get   "feeds/:fid"                  => 'feeds#index'

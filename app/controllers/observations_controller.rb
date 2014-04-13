@@ -29,7 +29,7 @@ class ObservationsController < ApplicationController
 
   # GET /observations/new
   def new
-    @observations = Observation.new
+    @observations = Observation.new(obs)
   end
 
   # GET /observations/1/edit
@@ -39,17 +39,25 @@ class ObservationsController < ApplicationController
   # POST /observations
   # POST /observations.json
   def create
-    @observations = Observation.new(obersvation_params)
-
-    respond_to do |format|
-      if @obersvation.save
-        format.html { redirect_to @obersvation, notice: 'Obersvation was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @obersvation }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @obersvation.errors, status: :unprocessable_entity }
-      end
+    uploaded_photo = params[:photo]
+    #TODO better nameing convention
+    new_file_name = Time.now.to_s + "." + uploaded_photo.original_filename.split('.').last
+    File.open(Rails.root.join('public', 'images', new_file_name ), 'wb') do |file|
+      file.write(uploaded_photo.read)
     end
+    @observation = Observation.new(obersvation_params)
+    location = Location.new(locations_params)
+    @observation.location = location
+    photo = Photo.new()
+    @observation.photos = [Photo.new(:path => new_file_name)]
+    @observation.feed_id = current_user.feed.id
+    
+    if @observation.save
+      redirect_to :controller => 'feeds', :action => 'index', :fid => current_user.feed.id
+    else
+      #TODO error handling
+    end
+
   end
 
   # PATCH/PUT /observations/1
@@ -89,6 +97,9 @@ class ObservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def obersvation_params
-      params[:obersvation]
+      params.require(:observation).permit(:right_ascension, :declination, :magnitude, :seen)
+    end
+    def locations_params
+      params.require(:location).permit(:latitude, :longitude, :altitude)
     end
 end

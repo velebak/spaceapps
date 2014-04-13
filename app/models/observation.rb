@@ -19,4 +19,5 @@ class Observation < ActiveRecord::Base
   acts_as_ordered_taggable
   has_many  :photos
   has_one   :location
+  default_scope order('created_at DESC')
 end
