@@ -85,13 +85,15 @@
 
 			<h1>Upload</h1>
 			
-			<form>
-				<p><input type="file" class="file" name="" /></p>
-				<input type="text" name="" placeholder="Enter field 1" />
-				<input type="text" name="" placeholder="Enter field 2" />
-				<input type="text" name="" placeholder="Enter field 3" />
-				<input type="text" name="" placeholder="Enter field 4" />
-				
+			<form method="post" action="/observations/create" enctype="multipart/form-data">
+				<p><input type="file" class="file" name="photo" /></p>
+				<input type="text" name="observation[right_ascension]" placeholder="Right Ascension" />
+				<input type="text" name="observation[declination]" placeholder="Declination" />
+				<input type="text" name="observation[magnitude]" placeholder="Magnitude" />
+				<input type="text" name="observation[seen]" placeholder="Seen Date mm/dd/yyyy" />
+				<input type="text" name="location[latitude]" placeholder="Latitude" />
+				<input type="text" name="location[longitude]" placeholder="Longitude" />
+				<input type="text" name="location[altitude]" placeholder="Altitude" />
 				<input class="button" type="submit" value="Finish" />
 			</form>
 
