@@ -5,7 +5,7 @@
 			<div class="module module-user">
 				<!-- TODO change to username -->
 				<span class="user-name"><%= @feed.user.name %></span>
-				<span class="user-username"><%= @feed.user.name %></span>
+				<span class="user-username"><%= @feed.user.username %></span>
 				<% if @current_user && @current_user.id != @feed.user_id %>
 					<% if @is_current_user_following %>
 						<button class="active">Following</button>
