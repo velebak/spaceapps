@@ -5,8 +5,8 @@ class FeedsController < ApplicationController
     @feed = Feed.find(params[:fid])
     @following = Followers.where(:user_id => @feed.user_id)
     @followers = Followers.where(:feed_id => @feed.id)
-    @current_user_feed = Feed.where(:user_id => current_user.id)
     if current_user
+      @current_user_feed = Feed.where(:user_id => current_user.id)
       is_following = Followers.where(:feed_id => @feed.id, :user_id => current_user.id)
       if is_following.count > 0
         @is_current_user_following = true;

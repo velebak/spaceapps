@@ -6,7 +6,7 @@
 				<!-- TODO change to username -->
 				<span class="user-name"><%= @feed.user.name %></span>
 				<span class="user-username"><%= @feed.user.username %></span>
-				<% if @current_user && @current_user_feed.id != params[:fid] %>
+				<% if @current_user && @current_user.id != @feed.user.id %>
 					<% if @is_current_user_following %>
 						<button class="active">Following</button>
 					<% else %>
