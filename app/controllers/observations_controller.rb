@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class ObservationsController < ApplicationController
   before_action :set_obersvation, only: [:show, :edit, :update, :destroy]
 
@@ -42,8 +44,9 @@ class ObservationsController < ApplicationController
     uploaded_photo = params[:photo]
     logger.debug uploaded_photo
     #TODO better nameing convention
-    new_file_name = Time.now.to_s + "." + uploaded_photo.original_filename.split('.').last
-    File.open(Rails.root.join('public', 'images', new_file_name ), 'wb') do |file|
+    new_file_name = "#{SecureRandom.uuid.gsub("-","")}#{File.extname(uploaded_photo.original_filename)}"
+    #new_file_name = Time.now.to_s + "." + uploaded_photo.original_filename.split('.').last
+    File.open("#{photo_dir}#{new_file_name}"), 'wb') do |file|
       file.write(uploaded_photo.read)
     end
     @observation = Observation.new(obersvation_params)
@@ -103,4 +106,13 @@ class ObservationsController < ApplicationController
     def locations_params
       params.require(:location).permit(:latitude, :longitude, :altitude)
     end
+
+  def photo_dir
+    prefix = ENV['OPENSHIFT_DATA_DIR'] ? "#{ENV['OPENSHIFT_DATA_DIR']}/" : ""
+    "#{prefix}images#{File.separator}"
+  end
+
+  def photo_url
+
+  end
 end
