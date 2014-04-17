@@ -52,7 +52,7 @@ Spaceapps::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
   log_path = ENV['OPENSHIFT_LOG_DIR']
   log_path ||= ""
-  config.logger = ActiveSupport::Logger.new((File.join(log_path, "production.log"))
+  config.logger = ActiveSupport::Logger.new((File.join(log_path, "production.log")))
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
