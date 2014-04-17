@@ -1,2 +1,2 @@
-mkdir -p $OPENSHIFT_DATA_DIR/uploads
-ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/public/uploads
+mkdir -p $OPENSHIFT_DATA_DIR/images
+ln -sf $OPENSHIFT_DATA_DIR/images $OPENSHIFT_REPO_DIR/public/images
