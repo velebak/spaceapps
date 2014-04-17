@@ -110,7 +110,7 @@ class ObservationsController < ApplicationController
   def photo_dir
     folder = "images"
     prefix = ENV['OPENSHIFT_DATA_DIR'] ? "#{ENV['OPENSHIFT_DATA_DIR']}/" : ""
-    "#{prefix}#{folder}#{File.separator}"
+    File.join(prefix, folder)
   end
 
   def photo_url
