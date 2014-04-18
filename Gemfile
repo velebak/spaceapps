@@ -64,3 +64,5 @@ gem 'neat'
 # Bitters
 gem 'bitters'
 
+#heroku
+gem 'rails_12factor', group: :production

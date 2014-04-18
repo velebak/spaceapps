@@ -26,9 +26,9 @@ production:
 
   adapter: postgresql
   encoding: utf-8
-  database: astrodeo
+  database: dd23lo9pt3cod2
   pool: 5
-  username: admintqwmj7l
-  password: mnyuERnj1FQZ
-  host: <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
-  port: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>
+  username: gqnwcsfgxvuzvu
+  password: 4f6RhrkUllDPbpUIpUVz_IjJwI
+  host: ec2-54-197-241-67.compute-1.amazonaws.com
+  port: 5432
