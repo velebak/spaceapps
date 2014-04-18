@@ -19,7 +19,16 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: <%=ENV['OPENSHIFT_DATA_DIR']%>/production.sqlite3
+        #adapter: postgresql
+        #database: <%=ENV['OPENSHIFT_DATA_DIR']%>/production.sqlite3
+        #pool: 5
+        #timeout: 5000
+
+  adapter: postgresql
+  encoding: utf-8
+  database: astrodeo
   pool: 5
-  timeout: 5000
+  username: admintqwmj7l
+  password: mnyuERnj1FQZ
+  host: <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
+  port: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>

@@ -52,6 +52,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-openid'
 gem 'acts-as-taggable-on'
 
+gem 'pg'
+
 # Bourbon
 gem 'bourbon'
 

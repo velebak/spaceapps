@@ -46,13 +46,13 @@ class ObservationsController < ApplicationController
     #TODO better nameing convention
     new_file_name = "#{SecureRandom.uuid.gsub("-","")}#{File.extname(uploaded_photo.original_filename)}"
     #new_file_name = Time.now.to_s + "." + uploaded_photo.original_filename.split('.').last
-    File.open("#{photo_dir}#{new_file_name}", 'wb') do |file|
+    final_name = File.join(photo_dir,new_file_name)
+    File.open(final_name, 'wb') do |file|
       file.write(uploaded_photo.read)
     end
     @observation = Observation.new(obersvation_params)
     location = Location.new(locations_params)
     @observation.location = location
-    photo = Photo.new()
     @observation.photos = [Photo.new(:path => new_file_name)]
     @observation.feed_id = current_user.feed.id
     
