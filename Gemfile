@@ -52,6 +52,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-openid'
 gem 'acts-as-taggable-on'
 
+#Postgresql - production
 gem 'pg'
 
 # Bourbon
