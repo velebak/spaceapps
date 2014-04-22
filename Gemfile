@@ -66,3 +66,7 @@ gem 'bitters'
 
 #heroku
 gem 'rails_12factor', group: :production
+
+#s3 upload
+gem 'carrierwave'
+gem 'fog', '~> 1.0.0'

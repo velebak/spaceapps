@@ -14,7 +14,7 @@
 #
 
 class Photo < ActiveRecord::Base
-
+  mount_uploader :path, PhotoUploader
   belongs_to  :observation
   default_scope order('created_at DESC')
 
